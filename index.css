@@ -1,0 +1,238 @@
+:root {
+    --primary: #4A6FFF;
+    --primary-dark: #3D5CDB;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --background: #F9FAFC;
+    --card-bg: #FFFFFF;
+    --border: #E1E5EE;
+    --success: #28a745;
+    --danger: #dc3545;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: var(--background);
+    padding: 40px 20px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
+    color: var(--text-primary);
+}
+
+form {
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+input, button {
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+input {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(74, 111, 255, 0.2);
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 20px;
+    margin: 15px auto;
+    max-width: 550px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+}
+
+.actions form {
+    margin: 0;
+}
+
+.actions button.delete {
+    background-color: var(--danger);
+}
+
+.actions button.edit {
+    background-color: var(--success);
+}
+
+/* Modal styles */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 25px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    position: relative;
+    animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 15px;
+}
+
+.modal-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.modal-close {
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    box-shadow: none;
+}
+
+.modal-close:hover {
+    color: var(--text-primary);
+    background: transparent;
+    transform: none;
+    box-shadow: none;
+}
+
+.modal-body {
+    margin-bottom: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    border-top: 1px solid var(--border);
+    padding-top: 15px;
+}
+
+.btn-cancel {
+    background-color: #6c757d;
+}
+
+.btn-update {
+    background-color: var(--success);
+}
+
+.btn-delete {
+    background-color: var(--danger);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-title {
+    font-weight: 600;
+    margin: 0;
+    color: var(--text-primary);
+}
+
+.password-field {
+    position: relative;
+    display: inline-block;
+}
+
+.show-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 5px;
+    box-shadow: none;
+}
+
+.show-password:hover {
+    color: var(--primary);
+    background: transparent;
+    transform: translateY(-50%);
+    box-shadow: none;
+}
